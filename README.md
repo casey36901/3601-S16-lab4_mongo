@@ -44,6 +44,8 @@ http://getbootstrap.com/components/
 Getting started with mongo:
 http://mongly.openmymind.net/tutorial/index
 
+[![Build Status](https://travis-ci.org/casey36901/3601-S16-lab4_mongo.svg?branch=master)](https://travis-ci.org/casey36901/3601-S16-lab4_mongo)
+
 
 
 
