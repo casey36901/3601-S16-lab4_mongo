@@ -46,4 +46,19 @@ angular.module("appModule")
             return self.data.length;
         };
 
+        self.getHeaviestPet = function(data){
+            var heaviestPet = data[0].weight;
+            console.log(data);
+            for(var i=1; i < data.length; i++){
+                if(data[i].weight > heaviestPet){
+                    heaviestPet = data[i].weight;
+
+                    console.log(heaviestPet);
+                } else {
+                    console.log(heaviestPet);
+                }
+            };
+            return heaviestPet;
+        };
+
     });
