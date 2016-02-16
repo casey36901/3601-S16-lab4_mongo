@@ -47,4 +47,29 @@ angular.module("appModule")
                 return self.data.length;
             };
 
+        self.calculateGPA = function(data){
+            var value = 0;
+            var totalCredits = 0;
+            for(var i=0; i < data.length; i++){
+                if(data[i].grade == "A"){
+                    value += (data[i].credits * 4.0);
+                }
+                if(data[i].grade == "B"){
+                    value += (data[i].credits * 3.0);
+                }
+                if(data[i].grade == "C"){
+                    value += (data[i].credits * 2.0);
+                }
+                if(data[i].grade == "D"){
+                    value += (data[i].credits * 1.0);
+                }
+                if(data[i].grade == "F"){
+                    value += (data[i].credits * 0.0);
+                }
+                totalCredits += data[i].credits;
+             };
+            return  (value* (1/totalCredits));
+        };
+
+
             });
