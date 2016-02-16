@@ -28,8 +28,6 @@ angular.module("appModule")
                 self.textField = "";
                 self.textField1 = "";
             }
-
-
         };
 
         self.removeData = function(index){

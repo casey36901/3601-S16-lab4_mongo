@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
 
-</body>
-</html>
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<hr>
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item">
+
+            <form ng-submit="gpa.addData()">
+                <input ng-model="gpa.textField" type="text" size="50" placeholder="Course Name">
+                <input ng-model="gpa.textField1" type="weight" size="50" placeholder="Course Credits">
+                <input ng-model="gpa.textField2" type="weight" size="50" placeholder="Course Grade">
+                <input type="submit" value="submit" class="btn btn-primary">
+                <span class="floatRight">Items in this list: {{gpa.itemsInList()}}
+                </span>
+            </form>
+
+        </li>
+        <li class="list-group-item" ng-repeat="test in gpa.data">{{test.text}}, {{test.credits}}, {{test.grade}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="main.removeData($index)"></span></li>
+    </ul>
+</div>
