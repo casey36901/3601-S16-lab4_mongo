@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 // Defining Model
 // =====================================================
 
-var gpa = mongoose.model('GPA', {
+var GPA = mongoose.model('GPA', {
     text: String,
     credits: Number,
     grade: String
@@ -18,7 +18,7 @@ var gpa = mongoose.model('GPA', {
 // =====================================================
 
 exports.index = function(req, res) {
-    gpa.find(function (err, gpa) {
+    GPA.find(function (err, gpa) {
         if (err) {
             console.log("Error getting data from database");
             res.send(err)
@@ -29,11 +29,11 @@ exports.index = function(req, res) {
 };
 
 exports.create = function(req, res) {
-    gpa.create(req.body, function (err, gpa) {
+    GPA.create(req.body, function (err, gpa) {
         if (err) {
             res.send(err);
         } else {
-            gpa.find(function (err, gpa) {
+            GPA.find(function (err, gpa) {
                 if (err) {
                     res.send(err);
                 }
@@ -45,7 +45,7 @@ exports.create = function(req, res) {
 };
 
 exports.destroy = function(req, res) {
-    gpa.findById(req.params.gpa_id, function(err, gpa){
+    GPA.findById(req.params.gpa_id, function(err, gpa){
         if(err) { res.send(err); return "error: " + err; }
         if(!gpa) { return res.sendStatus(404); }
 

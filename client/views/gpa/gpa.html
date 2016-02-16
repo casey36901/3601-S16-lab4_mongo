@@ -8,14 +8,19 @@
 
             <form ng-submit="gpa.addData()">
                 <input ng-model="gpa.textField" type="text" size="50" placeholder="Course Name">
-                <input ng-model="gpa.textField1" type="weight" size="50" placeholder="Course Credits">
-                <input ng-model="gpa.textField2" type="weight" size="50" placeholder="Course Grade">
+                <input ng-model="gpa.textField1" type="credits" size="50" placeholder="Course Credits">
+                <input ng-model="gpa.textField2" type="grade" size="50" placeholder="Course Grade">
                 <input type="submit" value="submit" class="btn btn-primary">
-                <span class="floatRight">Items in this list: {{gpa.itemsInList()}}
+
+                <span class=floatCenter>Number of classes in this list: {{gpa.itemsInList()}}
+                    </br>
+                    GPA: {{gpa.calculateGPA()}}
                 </span>
+                </br>
+
             </form>
 
         </li>
-        <li class="list-group-item" ng-repeat="test in gpa.data">{{test.text}}, {{test.credits}}, {{test.grade}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="main.removeData($index)"></span></li>
+        <li class="list-group-item" ng-repeat="test in gpa.data">{{test.text}}, {{test.credits}}, {{test.grade}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="gpa.removeData($index)"></span></li>
     </ul>
 </div>

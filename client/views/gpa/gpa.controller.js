@@ -22,9 +22,9 @@ angular.module("appModule")
         self.getGPA();
 
         self.addData = function() {
-            if (self.textField.length >= 1, self.textField1 >= 1, self.textField2 >= 1) {
+            if (self.textField.length >= 1, self.textField1 == 1, self.textField2.length == 1) {
                 $http.post('api/gpa', {text: self.textField, credits: self.textField1, grade: self.textField2}).success(function () {
-                    self.getGpa();
+                    self.getGPA();
                 });
                 self.textField = "";
                 self.textField1 = "";
@@ -35,7 +35,7 @@ angular.module("appModule")
 
 
             self.removeData = function(index){
-                $http.delete('/api/gpa/' + self.data[index]._id).success(function(){
+                $http.delete('/api/gpa' + self.data[index]._id).success(function(){
                     self.getGPA();
                 });
             };

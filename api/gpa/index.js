@@ -8,7 +8,7 @@
 //Comment
 
 var express = require('express');
-var controller = require('./gpa.controller.js');
+var controller = require('./apigpa.controller.js');
 
 var router = express.Router();
 
